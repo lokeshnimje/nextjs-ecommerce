@@ -1,5 +1,6 @@
 'use client';
 import { useCart } from '@/context/CartProvider';
+import Image from "next/image";
 import styles from '../../styles/Products.module.css';
 
 export default function ProductsList({ products }) {
@@ -12,7 +13,8 @@ export default function ProductsList({ products }) {
       {products.map(product => (
         <div key={product.id} className={styles.productCard}>
           <h3>{product.title}</h3>
-          <img src={product.image} alt={product.title} width={100} height={100} />
+          <Image src={product.image} alt={product.title} width={100} height={100} />
+
           <div>
             <a href={`/products/${product.id}`}>View Details</a>
             <button disabled={isInCart(product.id)} style={isInCart(product.id) ? {backgroundColor: '#828282'} : {}} onClick={() => addToCart(product)}>

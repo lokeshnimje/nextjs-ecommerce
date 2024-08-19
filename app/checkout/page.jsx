@@ -54,7 +54,7 @@ export default function CheckoutPage() {
               ))}
             </tbody>
           </table>
-          <h3>Total Amount: {getTotalAmount()} $</h3>
+          <h3>Total Amount: {getTotalAmount().toFixed(2)} $</h3>
 
           <button onClick={openModal} className={styles.checkoutButton}>
             Place Order
@@ -67,7 +67,7 @@ export default function CheckoutPage() {
         </>
       ) : (
         <>
-          <h3>You haven't selected any product to buy!</h3>
+          <h3>You have not selected any product to buy!</h3>
           <a className={styles.checkoutButton} href="/products">
             Shop Now
           </a>
