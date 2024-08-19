@@ -1,0 +1,17 @@
+.homeContainer {
+    text-align: center;
+  }
+  
+  .shopLink {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #0070f3;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .shopLink:hover {
+    background-color: #005bb5;
+  }
+  
