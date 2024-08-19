@@ -3,16 +3,18 @@ import { useCart } from "@/context/CartProvider";
 import styles from "../../styles/Cart.module.css";
 import { useState } from "react";
 import OrderConfirmationModal from "@/components/OrderConfirmationModal";
+import { useRouter } from "next/navigation";
 
 export default function CheckoutPage() {
 
   const { cart, removeFromCart, setCart } = useCart();
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const router = useRouter()
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => {
     setIsModalOpen(false);
     setCart([])
+    router.replace('/');
   } 
 
   const getTotalAmount = () => {
